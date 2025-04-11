@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Market - Indian Agricultural Data</title>
+    <link rel="stylesheet" href="/market.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="title-section">
+               <a href="/" style="text-decoration: none;"> <span style="color: black;">Smart Agri Advisor</span></a>
+                    <h1>World Market</h1>
+                    <p>Daily updates on vegetable, fruit, and grain markets in India</p>
+                </div>
+                <div class="action-buttons">
+                    <button id="refreshBtn" class="btn"><i class="fas fa-sync-alt"></i> Refresh</button>
+                    <button id="exportBtn" class="btn"><i class="fas fa-download"></i> Export</button>
+                    <a href="https://agmarknet.ceda.ashoka.edu.in/" target="_blank" class="btn visualization-btn">
+                        <i class="fas fa-chart-line"></i> Advanced Visualization
+                    </a>
+                </div>
+            </div>
+            <div class="last-updated">
+                Last updated: <span id="updateTimestamp"></span>
+            </div>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="market-prices">Market Prices</button>
+            <button class="tab-btn" data-tab="government-schemes">Government Schemes</button>
+        </div>
+
+        <div class="tab-content active" id="market-prices">
+            <div class="market-data">
+                <table id="commodityTable">
+                    <thead>
+                        <tr>
+                            <th>Commodity</th>
+                            <th>Market</th>
+                            <th>Price (INR)</th>
+                            <th>Unit</th>
+                            <th>Change (%)</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody id="commodityTableBody">
+                        <!-- Data will be populated by JavaScript -->
+                        <tr>
+                            <td colspan="5" class="loading-message">Loading market data...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="summary-section">
+                <div class="summary-card">
+                    <h3>Top Gainers</h3>
+                    <ul id="topGainers" class="summary-list">
+                        <!-- Data will be populated by JavaScript -->
+                        <li class="loading-message">Loading data...</li>
+                    </ul>
+                </div>
+                <div class="summary-card">
+                    <h3>Top Losers</h3>
+                    <ul id="topLosers" class="summary-list">
+                        <!-- Data will be populated by JavaScript -->
+                        <li class="loading-message">Loading data...</li>
+                    </ul>
+                </div>
+                <div class="summary-card">
+                    <h3>Most Traded</h3>
+                    <ul id="mostTraded" class="summary-list">
+                        <!-- Data will be populated by JavaScript -->
+                        <li class="loading-message">Loading data...</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="charts-section">
+                <div class="chart-container">
+                    <h3>Demand by State</h3>
+                    <canvas id="demandByRegionChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Most Demanded Items</h3>
+                    <canvas id="mostDemandedChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="government-schemes">
+            <div class="schemes-container" id="schemesContainer">
+                <!-- Government schemes will be populated by JavaScript -->
+                <div class="loading-message">Loading government schemes...</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/market.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartAgriAdvisor</title>
+    <link rel="stylesheet" href="/visual.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-seedling"></i>
+            <a href="/" style="text-decoration: none;"> <span style="color: white;">Smart Agri Advisor</span></a>
+        </div>
+        <nav>
+            <a href="/features/recommedation">Home</a>
+            <a href="/user/logout">Logout</a>
+            <a href="#">About</a>
+            <div class="profile">
+                <a href="/user/userProfile"><img src="/profile logo.png" alt="Profile Avatar" class="avatar"></a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 class="form-title">🌾 Crop Recommendation System</h1>
+        <form id="cropForm" class="styled-form">
+            <div class="form-group">
+            <label for="soilType" class="form-label">Soil Type:</label>
+            <select id="soil" name="soil" required class="form-select">
+                <option value="">Select soil type</option>
+                <option value="loamy">Loamy</option>
+                <option value="clay">Clay</option>
+                <option value="sandy">Sandy</option>
+                <option value="saline">Saline</option>
+            </select>
+            </div>
+
+            <div class="form-group">
+            <label for="temperature" class="form-label">Average Temperature (°C):</label>
+            <input type="number" name="temperature" id="temperature" required class="form-input" placeholder="Enter temperature" min="0" max="50">
+            </div>
+
+            <div class="form-group">
+            <label for="humidity" class="form-label">Average Humidity (%):</label>
+            <input type="number" id="humidity" name="humidity" required min="0" max="100" class="form-input" placeholder="Enter humidity">
+            </div>
+
+            <div class="form-group">
+            <label for="rainfall" class="form-label">Average Rainfall (mm):</label>
+            <input type="number" id="rainfall" name="rainfall" required class="form-input" placeholder="Enter rainfall">
+            </div>
+
+            <button type="submit" class="form-button">🌱 Get Recommendations</button>
+        </form>
+    </div>
+
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-title {
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        .styled-form .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .form-input, .form-select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-input:focus, .form-select:focus {
+            border-color: #4CAF50;
+            outline: none;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+        }
+
+        .form-button {
+            width: 100%;
+            padding: 10px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .form-button:hover {
+            background: #45a049;
+        }
+    </style>
+
+        </div>
+        <div class="visualization-container">
+            <div class="chart-container">
+                <div id="donutchart" style="width: 100%; height: 400px;"></div>
+            </div>
+            <div class="chart-container">
+                <div id="demandchart" style="width: 100%; height: 400px;"></div>
+            </div>
+            <div class="numeric-stats">
+                <div class="stat-card">
+                    <div class="stat-value" id="totalYield">0</div>
+                    <div class="stat-label">Total Yield (M-Tons)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="avgYield">0</div>
+                    <div class="stat-label">Average Yield per Crop</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="bestCrop">-</div>
+                    <div class="stat-label">Best Performing Crop</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact">
+                <p>Email: <a href="mailto:info@smartagriadvisor.com">info@smartagriadvisor.com</a></p>
+                <p>Phone: +91 234 567 890</p>
+            </div>
+            <div class="follow-us">
+                <p>Follow Us</p>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="/visual.js"></script>
+</body>
+</html>
