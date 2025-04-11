@@ -1,0 +1,47 @@
+body {
+    background-image: url(crop-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #1ce01c;
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+    color: black !important;
+}
+
+/* Login Container */
+.login-container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.25);
+    border-color: #198754;
+}
+
+.btn-success {
+    background-color: #198754;
+    border: none;
+}
+
+.btn-success:hover {
+    background-color: #145c32;
+}
+
+/* Footer */
+footer {
+    background: #1ce01c;
+    color: black;
+    text-align: center;
+    padding: 1rem 0;
+}
