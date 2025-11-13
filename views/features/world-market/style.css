@@ -1,0 +1,161 @@
+body {
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+.market-section, .schemes-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.chart-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    height: 400px;
+    position: relative;
+}
+
+.table-responsive {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.schemes-container {
+    max-height: 600px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.schemes-container .card {
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.schemes-container .card:hover {
+    transform: translateY(-5px);
+}
+
+#exportPDF {
+    background-color: #2ecc71;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 200px;
+}
+
+#exportPDF:hover {
+    background-color: #27ae60;
+}
+
+/* Animation for price changes */
+@keyframes priceChange {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.text-success, .text-danger {
+    animation: priceChange 0.5s ease;
+}
+
+/* Loading animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 10px;
+}
+
+/* Custom scrollbar for schemes container */
+.schemes-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.schemes-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.schemes-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.schemes-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Table styles */
+.table {
+    margin-bottom: 0;
+}
+
+.table th {
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container-fluid {
+        padding: 10px;
+    }
+    
+    .market-section, .schemes-section {
+        padding: 15px;
+    }
+    
+    .chart-container {
+        height: 300px;
+        padding: 15px;
+    }
+    
+    .table-responsive {
+        margin-bottom: 15px;
+        padding: 15px;
+    }
+    
+    .schemes-container {
+        max-height: none;
+    }
+    
+    #exportPDF {
+        max-width: 100%;
+    }
+    
+    .table th, .table td {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+/* Chart specific styles */
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+} 
