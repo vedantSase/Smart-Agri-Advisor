@@ -1,0 +1,60 @@
+/* Background Image */
+body {
+    background-image: url(./Images1/field-6288341_1280.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Center form properly */
+.container {
+    flex-grow: 1;
+}
+
+/* Form animation */
+.card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Fade-in effect */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card {
+        margin: 0 15px;
+    }
+}
+
+/* Button hover effect */
+.btn-success:hover {
+    background-color: #28a745;
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Navbar Styles */
+.navbar a {
+    color: white !important;
+    font-size: 18px;
+}
+
+.navbar a:hover {
+    color: #f8d200 !important;
+}
+
+/* Footer Styling */
+footer {
+    background: #28a745;
+}
+
