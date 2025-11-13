@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farming News Hub</title>
+    <link rel="stylesheet" href="/explore.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Farming News Hub</h1>
+        <p>Stay updated with the latest farming news, policies, and global scenarios</p>
+    </header>
+
+    <main>
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Loading latest farming news...</p>
+        </div>
+        <div class="error" id="error" style="display: none;">
+            <p>Failed to load news. Please try again later.</p>
+        </div>
+        <div class="news-container" id="news-container">
+            <!-- News cards will be dynamically added here -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Farming News Hub. All rights reserved.</p>
+        <p class="last-updated">Last updated: <span id="last-updated"></span></p>
+    </footer>
+
+    <script src="/explore.js"></script>
+</body>
+</html> 

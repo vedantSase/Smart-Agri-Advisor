@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Agri Advisor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/cover.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    
+</head>
+<body data-theme="light">
+    <div id="loadingScreen">
+        <div class="spinner"></div>
+    </div>
+    <div class="dark-mode-toggle" id="darkModeToggle">Dark</div>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <div class="logo">
+                <i class="fas fa-seedling"></i>
+               <a href="/" style="text-decoration: none;"> <span style="color: black;">Smart Agri Advisor</span></a>
+            </div>
+            <!-- <a class="navbar-brand text-white" href="/">Smart Agri Advisor</a> -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white pop-up-text" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white pop-up-text" href="/user/logout">Logout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/user/userProfile"><img src="/profile logo.png" alt="Profile Avatar" class="avatar"></a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link text-white pop-up-text" id="loginBtn" href="user/login_page">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white pop-up-text" id="signupBtn" href="user/signup_page">Sign Up</a>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-light text-center py-5">
+        <div class="container">
+            <h2 class="pop-up-text">Welcome to Smart Agri Advisor</h2>
+            <p>Your trusted partner in modern farming solutions</p>
+            <a href="/explore" class="btn btn-success btn-lg me-3">Explore more</a> <br> <br> <br>
+            <a href="/features/visualization" class="btn btn-success btn-lg">Recommend A Crop</a>
+        </div>
+    </header>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="/features/world-market" style="text-decoration: none;">
+                    <div class="card text-center hover-effect">
+                        <div class="feature-img-wrapper">
+                            <img src="/crop_monitoring.jpg" class="card-img-top img-fluid rounded-circle" alt="Feature" style="width: 150px; height: 150px;">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title pop-up-text">World Market</h5>
+                            <p class="card-text">Get daily updates on agricultural market prices and government schemes.</p>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="/features/weatherupdate" style="text-decoration: none;">
+                    <div class="card text-center hover-effect">
+                        <div class="feature-img-wrapper">
+                        <img src="/weather.jpg" class="card-img-top img-fluid rounded-circle" alt="Feature" style="width: 150px; height: 150px;">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title pop-up-text">Weather Forecasting</h5>
+                            <p class="card-text">Get location-based weather updates and forecasts for your district.</p>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="/features/experts" style="text-decoration: none;">
+                    <div class="card text-center hover-effect">
+                        <div class="feature-img-wrapper">
+                            <img src="/advisor.jpg" class="card-img-top img-fluid rounded-circle" alt="Feature" style="width: 150px; height: 150px;">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title pop-up-text">Expert Advice</h5>
+                            <p class="card-text">Access curated agricultural knowledge from industry experts and books.</p>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4">
+        <div class="container text-center">
+            <p class="mb-0 pop-up-text">&copy; 2025 Smart Agri Advisor. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/cover.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
