@@ -6,7 +6,7 @@ const db = require('./Config/db');
 dotenv.config();
 const flash = require('connect-flash');
 const session = require('express-session');
-const colors = require('colors'); 
+const colors = require('colors');
 const user = require('./Models/userModel');
 const passport = require('passport');
 const expressLayouts = require('express-ejs-layouts');
@@ -16,13 +16,14 @@ app.use(expressLayouts);
 app.set('view engine', 'ejs');
 
 app.use(express.json()); // ✅ Parses JSON body
-app.use(express.urlencoded({ extended: true })); // ✅ Parses form data
+app.use(express.urlencoded({ extended: false })); // ✅ Parses form data
 
 app.use(express.static(path.join(__dirname, 'views')));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'script')));
 app.use(express.static(path.join(__dirname, 'Images')));
-const rootDir  = require('./utils/pathUtils');
+// app.use(express.static(path.join(__dirname, 'Demo')));
+const rootDir = require('./utils/pathUtils');
 
 // session middleware
 app.use(session({
@@ -46,7 +47,7 @@ app.use(flash());
 
 
 // gloabal variables
-app.use((req,res, next) => {
+app.use((req, res, next) => {
     res.locals.success_msg = req.flash('success_msg');
     res.locals.error_msg = req.flash('error_msg');
     res.locals.error = req.flash('error');
@@ -64,10 +65,16 @@ app.get('/', (req, res) => {
     res.status(200).render('cover');
 });
 
+app.get('/explore', (req, res) => {
+    res.render('explore');
+});
+
 // routes.
 const userRoutes = require('./routes/userRoutes');
-app.use('/user',userRoutes);
+const featuresRoutes = require('./routes/featureRoutes');
+app.use('/user', userRoutes);
+app.use('/features', featuresRoutes);
 
-app.listen(process.env.PORT, ()=> {
+app.listen(process.env.PORT, () => {
     console.log(`Server is running on port ${process.env.PORT}`.bgGreen);
 })
